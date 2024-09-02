@@ -1,0 +1,15 @@
+.chat-form {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+}
+
+input {
+  width: 80%;
+}
+
+button {
+  width: 20%;
+}

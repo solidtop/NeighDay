@@ -1,0 +1,35 @@
+<div class="chat-container">
+  <app-channel-input
+    [channels]="channels"
+    [currentChannel]="currentChannel"
+    (changeChannelEvent)="joinChannel($event)"
+  />
+
+  <div class="chat">
+    <ul class="chat-list" (scroll)="isNearBottom()" #scrollFrame>
+      @for (message of chatService.messages$ | async; track message.id) {
+      <li class="chat-message" #item>
+        @if (message.timestamp) {
+        <span class="chat-message__timestamp">{{ message.timestamp | date : 'short' }}</span>
+        }
+
+        <div class="message-header">
+          <img
+            class="chat-message__avatar"
+            [src]="message.user?.avatarImageUrl"
+            alt="avatar"
+            *ngIf="message.user?.avatarImageUrl"
+          />
+          <span class="chat-message__author" [style.color]="message.user?.displayColor" *ngIf="message.user?.name"
+            >[{{ message.user?.name }}]:</span
+          >
+        </div>
+
+        <span class="chat-message__text" [style.color]="message.textColor"> {{ message.text }}</span>
+      </li>
+      }
+    </ul>
+  </div>
+
+  <app-chat-input (sendMessageEvent)="sendMessage($event)" />
+</div>

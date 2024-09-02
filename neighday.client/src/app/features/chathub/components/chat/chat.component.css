@@ -1,0 +1,55 @@
+.chat-container {
+  max-width: 400px;
+  padding: 1em;
+}
+
+.chat {
+  padding: 1em;
+  background-color: rgb(22, 19, 19);
+}
+
+.chat-list {
+  height: 60vh;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.chat-message {
+  padding: 0.5em;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chat-message:hover {
+  background-color: #292828;
+}
+
+.message-header {
+  display: inline-block;
+}
+
+.chat-message__timestamp {
+  display: block;
+  color: gray;
+}
+
+.chat-message__avatar {
+  height: 18px;
+  float: left;
+  margin-right: 5px;
+}
+
+.chat-message__author {
+  border-radius: 5px;
+}
+
+.chat-message__author:hover {
+  background-color: #585858;
+  cursor: pointer;
+}
+
+.chat-message__text {
+  color: white;
+  word-break: break-word;
+}

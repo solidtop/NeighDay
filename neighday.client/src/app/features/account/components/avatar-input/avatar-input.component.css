@@ -1,0 +1,30 @@
+.avatar-list {
+  display: flex;
+  gap: 1em;
+}
+
+.avatar {
+  position: relative;
+  max-width: 50px;
+}
+
+.avatar__image {
+  width: 100%;
+}
+
+.avatar__image--checked {
+  outline: 1px solid black;
+}
+
+.avatar__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.avatar__name {
+  text-align: center;
+}

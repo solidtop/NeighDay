@@ -1,0 +1,17 @@
+@if (authService.isAuthenticated() | async) {
+<button (click)="logout()">Logout</button>
+
+<p>Users online: {{ (onlineService.onlineUsers$ | async)?.length }}</p>
+
+<ul class="online-users">
+  @for (user of (onlineService.onlineUsers$ | async); track user.id) {
+  <li [style.color]="user.displayColor">
+    {{ user.name }}
+  </li>
+  }
+</ul>
+}
+
+<main>
+  <router-outlet></router-outlet>
+</main>

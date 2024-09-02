@@ -1,0 +1,19 @@
+<ul class="avatar-list">
+  @for (avatar of avatars; track avatar) {
+  <li class="avatar">
+    <img
+      [src]="avatar.url"
+      alt="avatar image"
+      [class]="'avatar__image ' + (avatarInput.checked ? 'avatar__image--checked' : '')"
+    />
+    <input
+      #avatarInput
+      type="radio"
+      name="avatar"
+      [checked]="avatar.url === avatarUrl"
+      class="avatar__input"
+      (click)="changeEvent.emit()"
+    />
+  </li>
+  }
+</ul>

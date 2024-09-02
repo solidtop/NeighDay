@@ -1,0 +1,13 @@
+<h2>Edit Account</h2>
+
+<section>
+  <h3>Avatar</h3>
+  <app-avatar-input [avatarUrl]="(authService.user$ | async)?.avatarUrl" (changeEvent)="handleChanges()" />
+</section>
+
+<section>
+  <h3>display color</h3>
+  <app-display-color-input [displayColor]="(authService.user$ | async)?.displayColor" (changeEvent)="handleChanges()" />
+</section>
+
+<button (click)="saveChanges()" [disabled]="!hasChanges">Save Changes</button>

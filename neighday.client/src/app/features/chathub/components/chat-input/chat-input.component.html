@@ -1,0 +1,11 @@
+<form [formGroup]="form" class="chat-form">
+  <div class="input-container">
+    <input
+      #chatInput
+      id="chat-input"
+      formControlName="text"
+      [placeholder]="'Chat as ' + (authService.user$ | async)?.username"
+    />
+    <button type="submit" [disabled]="!form.valid" (click)="sendMessage($event)">Send</button>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<div class="channel-list">
+  @for (channel of channels; track channel.id) {
+  <label [for]="channel.id">{{ channel.name }}</label>
+  <input
+    [id]="channel.id"
+    type="radio"
+    name="channelId"
+    [value]="channel.id"
+    (change)="changeChannel(channel)"
+    [checked]="channel.id === currentChannel.id"
+  />
+  }
+</div>
